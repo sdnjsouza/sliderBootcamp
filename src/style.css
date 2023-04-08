@@ -1,0 +1,151 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+  /* Mobile: 375px
+  Desktop: 1440px */
+  *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+
+:root{
+    --primary-color: hsl(240, 18%, 77%);
+    --second-color: hsl(240, 38%, 20%);
+    --font-size: 25px;
+}
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: url(../src/img/pattern-curve.svg) no-repeat bottom left;
+    background-size: contain;
+
+}
+.slider { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit,375px);
+    justify-content: center;
+    margin: 10px 20px;
+}
+.slide-box {
+  display: none;
+}
+.slide-box.show{
+   display: block;
+}
+
+.slide-box .personal-img{
+    background: url(../src/img/pattern-bg.svg) no-repeat;
+    background-size: contain;
+    padding: 30px;
+}
+
+.slide-box .personal-img img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.box-arrow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95px;
+    height: 30px;
+
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 30px;
+   
+}
+.box-arrow a:hover{
+transform: scale(1.4);
+transition: all 0.4s ease;
+}
+.arrow-disable{
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.personal-data{
+    background: url(../src/img/pattern-quotes.svg) no-repeat center top;
+    background-size:65px;
+
+    padding-top: 15px;
+    text-align: center;
+    
+}
+
+.personal-data .text{
+    line-height: 25px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin: 10px 0;
+}
+.personal-data .name-profession p:first-child{
+    font-weight: 700;
+}
+.personal-data .name-profession p:last-child{
+
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+@media (min-width: 890px) { 
+    .container{
+        background-size: 700px;
+    
+    }
+    .slider{
+        display: flex; 
+        align-items: center;
+        height: 100vh;
+    }
+    .slide-box.show {
+       display: flex;
+       flex-direction: row-reverse;
+       justify-content: center;
+        width: 100%;
+     }
+     .slide-box .personal-img{
+        background-size: 448px 518px;
+        width: 448px;
+        height: 518px;
+    }
+    
+    .slide-box .personal-img img{
+        width: 388px;
+        height: 388px;
+        border-radius: 10px;
+    }
+    .slide-box .personal-data{
+        margin-top: 100px;
+        text-align: start;
+        width:400px;
+    }
+    .slide-box .personal-data .text{
+        font-size: var(--font-size);
+        width: 498px;
+        line-height: 35px;
+    }
+    .slide-box .personal-data .name-profession{
+        display: flex;
+        gap: 10px;
+        width: max-content;
+    }
+
+    
+
+    .box-arrow{
+        position: absolute;
+        top: 75%;
+        left: 57%; 
+    }
+ }
